@@ -20,6 +20,8 @@ public class Converter {
 				menuSelection = scanner.nextInt();
 			} catch (Exception e) {
 				System.out.println("Exception thrown: " + e);
+				System.out.println("Incorrect Selection, Quitting Program");
+				return;
 			}
 			
 			switch (menuSelection) {
@@ -61,6 +63,8 @@ public class Converter {
 			entry = scanner.nextInt();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Selection");
+			return;
 		}
 		
 		switch (entry) {
@@ -92,6 +96,8 @@ public class Converter {
 			entry = scanner.nextInt();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Selection");
+			return;
 		}
 		
 		switch (entry) {
@@ -123,6 +129,8 @@ public class Converter {
 			entry = scanner.nextInt();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Selection");
+			return;
 		}
 		
 		switch (entry) {
@@ -152,6 +160,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double cups = entry;
 		double teaspoons = cups * 48;
@@ -164,6 +174,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double teaspoons = entry;
 		double cups = teaspoons / 48;
@@ -176,6 +188,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double usGallons = entry;
 		double imperialGallons = usGallons * 0.832674;
@@ -188,6 +202,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double imperialGallons = entry;
 		double usGallons = imperialGallons * 1.20095;
@@ -202,6 +218,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double miles = entry;
 		double kilometers = miles * 1.60934;
@@ -214,6 +232,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double kilometers = entry;
 		double miles = kilometers * 0.621371;
@@ -226,6 +246,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double mph = entry;
 		double knots = mph * 0.868976;
@@ -238,6 +260,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double knots = entry;
 		double mph = knots * 1.15078;
@@ -252,6 +276,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double usd = entry;
 		double euros = usd * 0.83;
@@ -264,6 +290,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double euros = entry;
 		double usd = euros * 1.21;
@@ -276,6 +304,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double usd = entry;
 		double yen = usd * 109.71;
@@ -288,6 +318,8 @@ public class Converter {
 			entry = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
 		}
 		double yen = entry;
 		double usd = yen * 0.0091;
