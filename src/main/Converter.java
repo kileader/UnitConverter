@@ -9,7 +9,7 @@ public class Converter {
 		int menuSelection = 0;
 		Scanner scanner = new Scanner(System.in);
 		
-		while (true) {
+		while (true) { // case 4 returns void
 			System.out.println("Please select a type of unit: \n"
 					+ "1. Volume \n"
 					+ "2. Distance/Speed \n"
@@ -26,6 +26,7 @@ public class Converter {
 				default:
 					System.out.println("Incorrect Selection");
 					System.out.println("");
+					break;
 				case 1:
 					selectVolume(scanner);
 					System.out.println("");
