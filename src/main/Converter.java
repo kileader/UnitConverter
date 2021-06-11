@@ -1,5 +1,6 @@
 package main;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Converter {
@@ -27,19 +28,15 @@ public class Converter {
 			switch (menuSelection) {
 				default:
 					System.out.println("Incorrect Selection");
-					System.out.println("");
 					break;
 				case 1:
 					selectVolume(scanner);
-					System.out.println("");
 					break;
 				case 2:
 					selectDistance(scanner);
-					System.out.println("");
 					break;
 				case 3:
 					selectMoney(scanner);
-					System.out.println("");
 					break;
 				case 4:
 					System.out.println("Quitting Program");
