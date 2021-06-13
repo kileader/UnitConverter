@@ -29,13 +29,13 @@ public class Converter {
 					System.out.println("Incorrect Selection");
 					break;
 				case 1:
-					selectVolume(scanner);
+					convertVolume(scanner);
 					break;
 				case 2:
-					selectDistance(scanner);
+					convertDistance(scanner);
 					break;
 				case 3:
-					selectMoney(scanner);
+					convertMoney(scanner);
 					break;
 				case 4:
 					System.out.println("Quitting Program");
@@ -46,8 +46,8 @@ public class Converter {
 	}
 	
 	
-	// Methods for selecting a conversion
-	static void selectVolume(Scanner scanner) {		
+	// Volume Conversions
+	static void convertVolume(Scanner scanner) {		
 		System.out.println("Select a conversion: \n"
 				+ "1. Cups to Teaspoons \n"
 				+ "2. Teaspoons to Cups \n"
@@ -55,6 +55,10 @@ public class Converter {
 				+ "4. Imperial Gallons to US Gallons");
 		
 		int entry = 0;
+		double multiplier = 0;
+		String unitOne = "n/a";
+		String unitTwo = "n/a";
+		
 		try {
 			entry = scanner.nextInt();
 		} catch (Exception e) {
@@ -65,22 +69,43 @@ public class Converter {
 		
 		switch (entry) {
 			case 1:
-				cupsToTeaspoons(scanner);
+				multiplier = 48;
+				unitOne = " Cups";
+				unitTwo = " Teaspoons";
 				break;
 			case 2:
-				teaspoonsToCups(scanner);
+				multiplier = 1/48;
+				unitOne = " Teaspoons";
+				unitTwo = " Cups";
 				break;
 			case 3:
-				usGallonsToImperialGallons(scanner);
+				multiplier = 0.832674;
+				unitOne = " US Gallons";
+				unitTwo = " Imperial Gallons";
 				break;
 			case 4:
-				imperialGallonsToUsGallons(scanner);
+				multiplier = 1.20095;
+				unitOne = " Imperial Gallons";
+				unitTwo = " US Gallons";
 				break;
 			default:
 				System.out.println("Incorrect Selection");
 		}
+		
+		System.out.println("What amount?");
+		double amount = 0;
+		try {
+			amount = scanner.nextDouble();
+		} catch (Exception e) {
+			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
+		}
+		System.out.println(amount + unitOne + " equals " + amount * multiplier + unitTwo + ".");
 	}
-	static void selectDistance(Scanner scanner) {
+	
+	// Distance Conversions
+	static void convertDistance(Scanner scanner) {
 		System.out.println("Select a conversion: \n"
 				+ "1. Miles to Kilometers \n"
 				+ "2. Kilometers to Miles \n"
@@ -88,6 +113,10 @@ public class Converter {
 				+ "4. Knots to MPH");
 
 		int entry = 0;
+		double multiplier = 0;
+		String unitOne = "n/a";
+		String unitTwo = "n/a";
+		
 		try {
 			entry = scanner.nextInt();
 		} catch (Exception e) {
@@ -98,22 +127,44 @@ public class Converter {
 		
 		switch (entry) {
 			case 1:
-				milesToKilometers(scanner);
+				multiplier = 1.60934;
+				unitOne = " Miles";
+				unitTwo = " Kilometers";
 				break;
 			case 2:
-				kilometersToMiles(scanner);
+				multiplier = 0.621371;
+				unitOne = " Kilometers";
+				unitTwo = " Miles";
 				break;
 			case 3:
-				mphToKnots(scanner);
+				multiplier = 0.868976;
+				unitOne = " MPH";
+				unitTwo = " Knots";
 				break;
 			case 4:
-				knotsToMph(scanner);
+				multiplier = 1.15078;
+				unitOne = " Knots";
+				unitTwo = " MPH";
 				break;
 			default:
 				System.out.println("Incorrect Selection");
 		}
+		
+		System.out.println("What amount?");
+		double amount = 0;
+		try {
+			amount = scanner.nextDouble();
+		} catch (Exception e) {
+			System.out.println("Exception thrown: " + e);
+			System.out.println("Incorrect Entry");
+			return;
+		}
+		System.out.println(amount + unitOne + " equals " + amount * multiplier + unitTwo + ".");
+		
 	}
-	static void selectMoney(Scanner scanner) {
+	
+	// Money Conversions
+	static void convertMoney(Scanner scanner) {
 		System.out.println("Select a conversion: \n"
 				+ "1. USD to Euro \n"
 				+ "2. Euro to USD \n"
@@ -121,6 +172,10 @@ public class Converter {
 				+ "4. Yen to USD");
 		
 		int entry = 0;
+		double multiplier = 0;
+		String unitOne = "n/a";
+		String unitTwo = "n/a";
+		
 		try {
 			entry = scanner.nextInt();
 		} catch (Exception e) {
@@ -131,195 +186,39 @@ public class Converter {
 		
 		switch (entry) {
 			case 1:
-				usdToEuro(scanner);
+				multiplier = 0.83;
+				unitOne = " USD";
+				unitTwo = " Euro";
 				break;
 			case 2:
-				euroToUsd(scanner);
+				multiplier = 1.21;
+				unitOne = " Euro";
+				unitTwo = " USD";
 				break;
 			case 3:
-				usdToYen(scanner);
+				multiplier = 109.72;
+				unitOne = " USD";
+				unitTwo = " Yen";
 				break;
 			case 4:
-				yenToUsd(scanner);
+				multiplier = 0.0091;
+				unitOne = " Yen";
+				unitTwo = " USD";
 				break;
 			default:
 				System.out.println("Incorrect Selection");
 		}
-	}
-	
-	
-	// Volume Conversions
-	static void cupsToTeaspoons(Scanner scanner) {
-		System.out.println("How many Cups?");
-		double entry = 0;
+		
+		System.out.println("What amount?");
+		double amount = 0;
 		try {
-			entry = scanner.nextDouble();
+			amount = scanner.nextDouble();
 		} catch (Exception e) {
 			System.out.println("Exception thrown: " + e);
 			System.out.println("Incorrect Entry");
 			return;
 		}
-		double cups = entry;
-		double teaspoons = cups * 48;
-		System.out.println(cups + " cups equals " + teaspoons + " teaspoons.");
-	}
-	static void teaspoonsToCups(Scanner scanner) {
-		System.out.println("How many Teaspoons?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double teaspoons = entry;
-		double cups = teaspoons / 48;
-		System.out.println(teaspoons + " teaspoons equals " + cups + " cups.");
-	}
-	static void usGallonsToImperialGallons(Scanner scanner) {
-		System.out.println("How many US Gallons?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double usGallons = entry;
-		double imperialGallons = usGallons * 0.832674;
-		System.out.println(usGallons + " US gallons equals " + imperialGallons + " Imperial gallons.");
-	}
-	static void imperialGallonsToUsGallons(Scanner scanner) {
-		System.out.println("How many Imperial Gallons?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double imperialGallons = entry;
-		double usGallons = imperialGallons * 1.20095;
-		System.out.println(imperialGallons + " Imperial gallons equals " + usGallons + " US Gallons.");
-	}
-	
-	// Distance Conversions
-	static void milesToKilometers(Scanner scanner) {
-		System.out.println("How many Miles?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double miles = entry;
-		double kilometers = miles * 1.60934;
-		System.out.println(miles + " miles equals " + kilometers + " kilometers.");
-	}
-	static void kilometersToMiles(Scanner scanner) {
-		System.out.println("How many Kilometers?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double kilometers = entry;
-		double miles = kilometers * 0.621371;
-		System.out.println(kilometers + " kilometers equals " + miles + " miles.");
-	}
-	static void mphToKnots(Scanner scanner) {
-		System.out.println("How many MPH?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double mph = entry;
-		double knots = mph * 0.868976;
-		System.out.println(mph + " mph equals " + knots + " knots.");
-	}
-	static void knotsToMph(Scanner scanner) {
-		System.out.println("How many Knots?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double knots = entry;
-		double mph = knots * 1.15078;
-		System.out.println(knots + " knots equals " + mph + " mph.");
-	}
-	
-	// Money Conversions
-	static void usdToEuro(Scanner scanner) {
-		System.out.println("How many USD?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double usd = entry;
-		double euros = usd * 0.83;
-		System.out.println(usd + " USD equals " + euros + " Euros.");
-	}
-	static void euroToUsd(Scanner scanner) {
-		System.out.println("How many Euros?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double euros = entry;
-		double usd = euros * 1.21;
-		System.out.println(euros + " Euros equals " + usd + " USD.");
-	}
-	static void usdToYen(Scanner scanner) {
-		System.out.println("How many USD?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double usd = entry;
-		double yen = usd * 109.71;
-		System.out.println(usd + " USD equals " + yen + " Yen.");
-	}
-	static void yenToUsd(Scanner scanner) {
-		System.out.println("How many Yen?");
-		double entry = 0;
-		try {
-			entry = scanner.nextDouble();
-		} catch (Exception e) {
-			System.out.println("Exception thrown: " + e);
-			System.out.println("Incorrect Entry");
-			return;
-		}
-		double yen = entry;
-		double usd = yen * 0.0091;
-		System.out.println(yen + " Yen equals " + usd + " USD.");
+		System.out.println(amount + unitOne + " equals " + amount * multiplier + unitTwo + ".");
 	}
 	
 }
