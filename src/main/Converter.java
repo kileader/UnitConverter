@@ -6,6 +6,12 @@ public class Converter {
 
 	// Main Method
 	public static void main(String[] args) {
+		Converter converter = new Converter();
+		converter.selectUnitType();
+	}
+	
+	// Select type of unit
+	public void selectUnitType() {
 		int menuSelection = 0;
 		Scanner scanner = new Scanner(System.in);
 		
@@ -45,9 +51,8 @@ public class Converter {
 		}
 	}
 	
-	
 	// Volume Conversions
-	static void convertVolume(Scanner scanner) {		
+	public void convertVolume(Scanner scanner) {		
 		System.out.println("Select a conversion: \n"
 				+ "1. Cups to Teaspoons \n"
 				+ "2. Teaspoons to Cups \n"
@@ -105,7 +110,7 @@ public class Converter {
 	}
 	
 	// Distance Conversions
-	static void convertDistance(Scanner scanner) {
+	public void convertDistance(Scanner scanner) {
 		System.out.println("Select a conversion: \n"
 				+ "1. Miles to Kilometers \n"
 				+ "2. Kilometers to Miles \n"
@@ -164,7 +169,7 @@ public class Converter {
 	}
 	
 	// Money Conversions
-	static void convertMoney(Scanner scanner) {
+	public void convertMoney(Scanner scanner) {
 		System.out.println("Select a conversion: \n"
 				+ "1. USD to Euro \n"
 				+ "2. Euro to USD \n"
