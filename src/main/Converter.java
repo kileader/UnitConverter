@@ -56,8 +56,8 @@ public class Converter {
 		
 		int entry = 0;
 		double multiplier = 0;
-		String unitOne = "n/a";
-		String unitTwo = "n/a";
+		String unitOne = " n/a";
+		String unitTwo = " n/a";
 		
 		try {
 			entry = scanner.nextInt();
@@ -92,7 +92,7 @@ public class Converter {
 				System.out.println("Incorrect Selection");
 		}
 		
-		System.out.println("What amount?");
+		System.out.println("How many" + unitOne + "?");
 		double amount = 0;
 		try {
 			amount = scanner.nextDouble();
@@ -114,8 +114,8 @@ public class Converter {
 
 		int entry = 0;
 		double multiplier = 0;
-		String unitOne = "n/a";
-		String unitTwo = "n/a";
+		String unitOne = " n/a";
+		String unitTwo = " n/a";
 		
 		try {
 			entry = scanner.nextInt();
@@ -150,7 +150,7 @@ public class Converter {
 				System.out.println("Incorrect Selection");
 		}
 		
-		System.out.println("What amount?");
+		System.out.println("How many" + unitOne + "?");
 		double amount = 0;
 		try {
 			amount = scanner.nextDouble();
@@ -173,8 +173,8 @@ public class Converter {
 		
 		int entry = 0;
 		double multiplier = 0;
-		String unitOne = "n/a";
-		String unitTwo = "n/a";
+		String unitOne = " n/a";
+		String unitTwo = " n/a";
 		
 		try {
 			entry = scanner.nextInt();
@@ -209,7 +209,7 @@ public class Converter {
 				System.out.println("Incorrect Selection");
 		}
 		
-		System.out.println("What amount?");
+		System.out.println("How many" + unitOne + "?");
 		double amount = 0;
 		try {
 			amount = scanner.nextDouble();
